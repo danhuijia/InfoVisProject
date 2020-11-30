@@ -1,0 +1,182 @@
+html {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.col {
+    margin-right: 30px;
+}
+
+.geo-path {
+    /*stroke: #ff8080;
+    stroke-width: 1.15;*/
+}
+
+.axis-color text{
+    fill: black;
+}
+
+.axis-label {
+    font-size: .9rem;
+    fill: black;
+}
+
+#location-selection {
+    color: white;
+}
+
+
+.choMap{
+    /* set a background color */
+    background-color:#29293d;
+    opacity: 0.8;
+
+}
+
+.tooltipMap {
+    position: absolute;
+    text-align: center;
+    width: 130px;
+    height: 20px;
+    padding: 2px;
+    font: 13px sans-serif;
+    background: #ffffb3;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    color: #132639;
+}
+
+.legend-text-map {
+    fill: whitesmoke;
+    font-size: 18px;
+    alignment-baseline: middle;
+    stroke: white;
+
+}
+
+
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 70px;
+    height: 20px;
+    padding: 2px;
+    font: 13px sans-serif;
+    background: #4d4d4d;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    color: #f2f2f2;
+}
+
+
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+/* View III*/
+.rad{
+    /* set a background color */
+    background-color:#29293d;
+
+}
+.node {
+    font-size: 12px;
+    font-family: Arial;
+    stroke: antiquewhite;
+}
+
+.link {
+
+    stroke: white;
+    stroke-opacity: 0.5;
+    stroke-width: 1.5;
+    fill: none;
+    pointer-events: none;
+
+}
+
+.tooltipRad {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 33px;
+    padding: 2px;
+    font: 13px sans-serif;
+    background: #ffffb3;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    color: #132639;
+}
+
+.node:hover,
+.node-source,
+.node-target {
+    font-weight: 700;
+}
+
+.node-source {
+    fill: #ffcc80;
+    stroke: #ffcc80;
+}
+
+.node-target {
+    stroke: lightskyblue;
+    fill: lightskyblue;
+}
+
+.link-source,
+.link-target {
+    stroke-opacity: 1;
+    stroke-width: 2px;
+}
+
+.link-source {
+    stroke: lightskyblue;
+}
+
+.link-target {
+    stroke: #ffcc80;
+}
+
+.legend-text {
+    fill: whitesmoke;
+    font-size: 16px;
+    alignment-baseline: middle;
+}
+  
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+  
+.tablink:hover {
+    background-color: #777;
+}
+  
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}

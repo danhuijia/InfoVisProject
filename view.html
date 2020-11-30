@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>View I & View II</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+
+<body>
+    <h1>Project-Covid19-South-Korea</h1>
+
+    <button class="tablink" onclick="openPage('V1_V2', this, 'black')" id="defaultOpen">View 1+2</button>
+    <button class="tablink" onclick="openPage('V3', this, 'black')">View 3</button>
+
+
+    <div id="V1_V2" class="tabcontent">
+        <div class="row">
+
+            <div class="col">
+                <h2>View I: Choropleth Map of South Korea</h2>
+                <div>
+                    <label for="select-province"></label>
+                    <p> Change View <input type="button" id="select-province" name="select-province" value="Municipality"></p>
+                    <span id="location-selection" value="None hovered">None hovered</span>
+                </div>
+                <svg id="map" width="800" height="600"></svg>
+            </div>
+
+
+            <div class="col">
+                <h2>View II: Modified Stacked Bar Chart with Filters</h2>
+                <div>
+                    <label for="filter-select">Filter By </label>
+                    <select id="filter-select" name="filter-select">
+                        <option>Total</option>
+                        <option>Infected</option>
+                        <option>Recovered</option>
+                        <option>Died</option>
+                    </select>
+                </div>
+
+
+                <p>Date: <input type="text" id="datepicker">
+                <label for="select-date"></label>
+                <input type="button" id="select-date" name="select-date" value="Search"></p>
+
+                <svg id="barchart" width="800" height="600"></svg>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="V3" class="tabcontent">
+        <h2>View III: Routes of Infected Patients through South Korean Cities</h2>
+        <svg id="radialchart" width="1600" height="1000"></svg>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/view1_2.js"></script>
+    <script src="js/view1map.js"></script>
+    <script src="js/view1pie.js"></script>
+    <script src="js/view2bar.js"></script>
+    <script src="js/view3.js"></script>
+    <script src="js/view3Radial.js"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+
+        $( "#datepicker" ).datepicker({
+            dateFormat: "yy-mm-dd",
+            maxDate: "2020-03-20",
+            minDate: "2020-01-23"
+        });
+    </script>
+
+
+
+    <script>
+
+        // From https://www.w3schools.com/howto/howto_js_tabs.asp
+
+        function openPage(pageName, elmnt, color) {
+            // Hide all elements with class="tabcontent" by default */
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+
+            }
+
+            // Remove the background color of all tablinks/buttons
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+
+            // Show the specific tab content
+            document.getElementById(pageName).style.display = "block";
+
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+
+    </script>
+
+
+
+</body>
+
+</html>
